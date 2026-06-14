@@ -234,30 +234,31 @@ function initBeforeAfterSlider() {
   handle.style.left = `50%`;
 
   let imagesLoaded = 0;
-  let hasError = false;
+
+  const revealSlider = () => {
+    if (loader && !loader.classList.contains('loaded')) {
+      loader.classList.add('loaded');
+    }
+  };
 
   const onImageLoad = () => {
-    if (hasError) return;
     imagesLoaded++;
-    if (imagesLoaded === 2) {
-      if (loader) {
-        loader.classList.add('loaded');
-      }
+    if (imagesLoaded >= 2) {
+      revealSlider();
     }
   };
 
   const onImageError = () => {
-    hasError = true;
-    if (loader) {
-      const loadingText = loader.querySelector('.slider-loading-text');
-      if (loadingText) {
-        loadingText.textContent = 'Image loading...';
-      }
+    // If one fails, allow proceeding so it doesn't stay stuck forever,
+    // but the fallback placeholder text remains visible in the background
+    imagesLoaded++;
+    if (imagesLoaded >= 2) {
+      revealSlider();
     }
   };
 
   // Check before image
-  if (beforeImg.complete) {
+  if (beforeImg.complete && beforeImg.naturalWidth > 0) {
     imagesLoaded++;
   } else {
     beforeImg.addEventListener('load', onImageLoad);
@@ -265,7 +266,7 @@ function initBeforeAfterSlider() {
   }
 
   // Check after image
-  if (afterImg.complete) {
+  if (afterImg.complete && afterImg.naturalWidth > 0) {
     imagesLoaded++;
   } else {
     afterImg.addEventListener('load', onImageLoad);
@@ -273,11 +274,12 @@ function initBeforeAfterSlider() {
   }
 
   // If both already cached / loaded
-  if (imagesLoaded === 2 && !hasError) {
-    if (loader) {
-      loader.classList.add('loaded');
-    }
+  if (imagesLoaded >= 2) {
+    revealSlider();
   }
+
+  // Safety Timeout Fallback: force reveal after 1.5 seconds under all circumstances
+  setTimeout(revealSlider, 1500);
 
   let isDragging = false;
 

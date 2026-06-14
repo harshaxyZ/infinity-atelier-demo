@@ -1074,7 +1074,7 @@ button, input, select, textarea {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto 5rem auto;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/3;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
