@@ -558,13 +558,16 @@
 
             <!-- Before/After Slider Container -->
             <div class="slider-container will-animate">
-                <!-- Before Image (Clipped, visible on the left) -->
-                <div class="slider-img slider-after">
-                    <img src="assets/projects/before_construction.webp" alt="Yutori Under Construction Room Shell">
+                <!-- Loading State Overlay -->
+                <div class="slider-loading">
+                    <div class="slider-loading-text">Image loading...</div>
                 </div>
-                
+
                 <!-- After Image (Background, visible on the right) -->
-                <img class="slider-img slider-before" src="assets/projects/modern-living/project_14_1200.webp" alt="Yutori Finished Bedroom Interiors Minimalist">
+                <img class="slider-img slider-before" src="assets/projects/modern-living/project_14_1200.webp" alt="Yutori Finished Bedroom Interiors Minimalist" loading="eager">
+
+                <!-- Before Image (Clipped, visible on the left) -->
+                <img class="slider-img slider-after" src="assets/projects/before_construction.webp" alt="Yutori Under Construction Room Shell" loading="eager">
                 
                 <div class="slider-handle">
                     <div class="slider-handle-button">
@@ -572,8 +575,8 @@
                     </div>
                 </div>
                 
-                <span class="slider-label slider-label-before">Before (Desk Shell)</span>
-                <span class="slider-label slider-label-after">After (Bedroom Sanctuary)</span>
+                <span class="slider-label slider-label-before">Before</span>
+                <span class="slider-label slider-label-after">After</span>
             </div>
 
             <!-- 3-Column Info Grid -->

@@ -223,9 +223,61 @@ function initBeforeAfterSlider() {
   const slider = document.querySelector('.slider-container');
   if (!slider) return;
 
+  const beforeImg = slider.querySelector('.slider-before');
   const afterImg = slider.querySelector('.slider-after');
   const handle = slider.querySelector('.slider-handle');
-  if (!afterImg || !handle) return;
+  const loader = slider.querySelector('.slider-loading');
+  if (!beforeImg || !afterImg || !handle) return;
+
+  // Default position: 50% (center)
+  afterImg.style.clipPath = `polygon(0 0, 50% 0, 50% 100%, 0 100%)`;
+  handle.style.left = `50%`;
+
+  let imagesLoaded = 0;
+  let hasError = false;
+
+  const onImageLoad = () => {
+    if (hasError) return;
+    imagesLoaded++;
+    if (imagesLoaded === 2) {
+      if (loader) {
+        loader.classList.add('loaded');
+      }
+    }
+  };
+
+  const onImageError = () => {
+    hasError = true;
+    if (loader) {
+      const loadingText = loader.querySelector('.slider-loading-text');
+      if (loadingText) {
+        loadingText.textContent = 'Image loading...';
+      }
+    }
+  };
+
+  // Check before image
+  if (beforeImg.complete) {
+    imagesLoaded++;
+  } else {
+    beforeImg.addEventListener('load', onImageLoad);
+    beforeImg.addEventListener('error', onImageError);
+  }
+
+  // Check after image
+  if (afterImg.complete) {
+    imagesLoaded++;
+  } else {
+    afterImg.addEventListener('load', onImageLoad);
+    afterImg.addEventListener('error', onImageError);
+  }
+
+  // If both already cached / loaded
+  if (imagesLoaded === 2 && !hasError) {
+    if (loader) {
+      loader.classList.add('loaded');
+    }
+  }
 
   let isDragging = false;
 
