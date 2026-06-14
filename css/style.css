@@ -2382,21 +2382,33 @@ textarea.form-control {
     width: 100%;
   }
   
+  .hero-tagline-container {
+    justify-content: center;
+  }
+  
+  .hero-metrics {
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    width: 100%;
+  }
+
+  .metric-num {
+    font-size: 1.85rem;
+  }
+
+  .metric-lbl {
+    font-size: 0.7rem;
+  }
+  
   .hero-image-wrapper {
     max-width: 100%;
     aspect-ratio: 1;
     border-radius: 16px;
     border-width: 1px;
     border-color: rgba(45, 74, 62, 0.08);
-  }
-  
-  .hero-float-card {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin: 2rem auto 0 auto;
-    max-width: 100%;
-    width: 100%;
+    margin-top: 1rem;
   }
   
   .stats-grid {
