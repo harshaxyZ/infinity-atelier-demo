@@ -1,0 +1,8 @@
+# Scripts
+process_images.py
+categorize_images.py
+view_all.html
+
+# OS metadata
+.DS_Store
+Thumbs.db
