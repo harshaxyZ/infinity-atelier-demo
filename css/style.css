@@ -319,21 +319,23 @@ button, input, select, textarea {
    5. Hero Section (Split Layout)
    -------------------------------------------------------------------------- */
 .hero {
-  padding-top: calc(var(--nav-height) + 2rem);
-  padding-bottom: 4rem;
+  padding-top: var(--nav-height);
+  padding-bottom: 0;
   background-color: var(--bg-primary);
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
-.hero .container {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
-  align-items: center;
+.hero-full-picture {
+  display: block;
+  width: 100%;
+}
+
+.hero-full-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-left {
@@ -2313,8 +2315,8 @@ textarea.form-control {
   }
   
   .hero {
-    padding-top: calc(var(--nav-height) + 1rem);
-    padding-bottom: 5rem;
+    padding-top: var(--nav-height);
+    padding-bottom: 0;
   }
   
   .hero-title {
