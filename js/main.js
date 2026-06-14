@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBlurUpImages();
   initContactForm();
   initConsultationRedirects();
+  initTimelineScroll();
 });
 
 /* --------------------------------------------------------------------------
@@ -428,4 +429,49 @@ function initConsultationRedirects() {
       }
     }, { passive: true });
   });
+}
+
+/* --------------------------------------------------------------------------
+   11. Timeline Scroll Progress Activation (Smooth Step Highlight)
+   -------------------------------------------------------------------------- */
+function initTimelineScroll() {
+  const steps = document.querySelectorAll('.timeline-step');
+  const progressBar = document.getElementById('timeline-progress-bar');
+  const timeline = document.querySelector('.timeline');
+  if (steps.length === 0 || !progressBar || !timeline) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -150px 0px',
+    threshold: 0.2
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const stepIdx = Array.from(steps).indexOf(entry.target);
+        
+        // Activate current and preceding steps
+        steps.forEach((step, idx) => {
+          if (idx <= stepIdx) {
+            step.classList.add('active');
+          } else {
+            step.classList.remove('active');
+          }
+        });
+
+        // Sync connection bar size
+        const percent = (stepIdx / (steps.length - 1)) * 100;
+        if (window.innerWidth > 640) {
+          progressBar.style.width = `${percent}%`;
+          progressBar.style.height = '2px';
+        } else {
+          progressBar.style.height = `${percent}%`;
+          progressBar.style.width = '2px';
+        }
+      }
+    });
+  }, observerOptions);
+
+  steps.forEach(step => observer.observe(step));
 }

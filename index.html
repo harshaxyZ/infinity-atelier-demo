@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Preload critical Hero Image for Page Speed (FCP < 1.5s) -->
-    <link rel="preload" href="assets/projects/modern-living/project_12_1200.webp" as="image" imagesrcset="assets/projects/modern-living/project_12_400.webp 400w, assets/projects/modern-living/project_12_800.webp 800w, assets/projects/modern-living/project_12_1200.webp 1200w" imagesizes="(max-width: 1024px) 100vw, 45vw">
+    <link rel="preload" href="assets/hero/hero_desktop.webp" as="image" imagesrcset="assets/hero/hero_mobile.webp 800w, assets/hero/hero_desktop.webp 1200w" imagesizes="(max-width: 1024px) 100vw, 45vw">
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -87,27 +87,14 @@
                     </a>
                     <button class="btn btn-secondary book-consultation-trigger" id="hero-cta-consult">Book Consult</button>
                 </div>
-                <div class="hero-trust">
-                    <div class="trust-avatars">
-                        <div class="trust-avatar"><img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%232D4A3E%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22white%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>P</text></svg>" alt="Client Avatar 1"></div>
-                        <div class="trust-avatar"><img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23B85C3E%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22white%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>R</text></svg>" alt="Client Avatar 2"></div>
-                        <div class="trust-avatar"><img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23C9A96E%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22white%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>S</text></svg>" alt="Client Avatar 3"></div>
-                        <div class="trust-avatar"><img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%231C1917%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22white%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>J</text></svg>" alt="Client Avatar 4"></div>
-                    </div>
-                    <div class="trust-text">
-                        <strong>Trusted by 200+ homeowners</strong>
-                        <span>Across Kolkata & Eastern India</span>
-                    </div>
-                </div>
             </div>
             
             <div class="hero-right will-animate delay-2">
                 <div class="hero-image-wrapper">
-                    <!-- Preloaded optimized main image of project 12 -->
-                    <img src="assets/projects/modern-living/project_12_1200.webp" 
-                         srcset="assets/projects/modern-living/project_12_400.webp 400w, assets/projects/modern-living/project_12_800.webp 800w, assets/projects/modern-living/project_12_1200.webp 1200w" 
-                         sizes="(max-width: 1024px) 100vw, 45vw"
-                         alt="Infinity Atelier Warm Terracotta Living Room Lounge Design">
+                    <picture>
+                        <source media="(max-width: 1024px)" srcset="assets/hero/hero_mobile.webp">
+                        <img src="assets/hero/hero_desktop.webp" alt="Infinity Atelier Modern Luxury Living Room Lounge Design">
+                    </picture>
                 </div>
                 
                 <!-- Floating Testimonial Card -->
@@ -578,8 +565,8 @@
                     <img src="assets/projects/modern-living/project_14_1200.webp" alt="Yutori Finished Bedroom Interiors Minimalist">
                 </div>
                 
-                <!-- Before Image (Workspace Setup) -->
-                <img class="slider-img slider-before" src="assets/projects/modern-living/project_15_1200.webp" alt="Yutori Under Construction Room Shell">
+                <!-- Before Image (Under Construction Raw Room) -->
+                <img class="slider-img slider-before" src="assets/projects/before_construction.webp" alt="Yutori Under Construction Room Shell">
                 
                 <div class="slider-handle">
                     <div class="slider-handle-button">
@@ -698,7 +685,7 @@
                         <span class="step-number-tag">01</span>
                     </div>
                     <h3>Discover</h3>
-                    <p>Understanding your lifestyle, architectural preferences, and spatial aspirations through visual briefs.</p>
+                    <p>Lifestyle Analysis &bull; Visual Briefs</p>
                 </div>
                 
                 <!-- Step 2 -->
@@ -708,7 +695,7 @@
                         <span class="step-number-tag">02</span>
                     </div>
                     <h3>Design</h3>
-                    <p>Constructing mood boards, detailed layout blue prints, 3D renderings, and matching material swatches.</p>
+                    <p>Layout Blueprints &bull; 3D Renderings</p>
                 </div>
                 
                 <!-- Step 3 -->
@@ -718,7 +705,7 @@
                         <span class="step-number-tag">03</span>
                     </div>
                     <h3>Craft</h3>
-                    <p>Deploying master stone masons, timber craftsmen, and installers to monitor detailed fit-outs.</p>
+                    <p>Artisan Joinery &bull; Site Execution</p>
                 </div>
                 
                 <!-- Step 4 -->
@@ -728,7 +715,7 @@
                         <span class="step-number-tag">04</span>
                     </div>
                     <h3>Deliver</h3>
-                    <p>Final styling and layering walkthrough. Handing over a turnkey sanctuary matching every rendering detail.</p>
+                    <p>Turnkey Handover &bull; Final Styling</p>
                 </div>
             </div>
         </div>
@@ -929,15 +916,7 @@
                                 <option value="renovation">Renovation / Others</option>
                             </select>
                         </div>
-                        <div class="form-group full-width">
-                            <label for="budget">Approximate Budget Range</label>
-                            <select id="budget" class="form-control">
-                                <option value="15-25">₹15 Lakhs - ₹25 Lakhs</option>
-                                <option value="25-50">₹25 Lakhs - ₹50 Lakhs</option>
-                                <option value="50-75">₹50 Lakhs - ₹75 Lakhs</option>
-                                <option value="75+">₹75 Lakhs +</option>
-                            </select>
-                        </div>
+
                         <div class="form-group full-width">
                             <label for="message">Describe Your Project *</label>
                             <textarea id="message" class="form-control" placeholder="Tell us about your home, number of rooms, and spatial ideas..." required></textarea>

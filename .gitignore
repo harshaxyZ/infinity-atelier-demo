@@ -6,3 +6,5 @@ view_all.html
 # OS metadata
 .DS_Store
 Thumbs.db
+
+.vercel
