@@ -319,23 +319,64 @@ button, input, select, textarea {
    5. Hero Section (Split Layout)
    -------------------------------------------------------------------------- */
 .hero {
-  padding-top: var(--nav-height);
-  padding-bottom: 0;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 5rem;
   background-color: var(--bg-primary);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
-  width: 100%;
 }
 
-.hero-full-picture {
-  display: block;
-  width: 100%;
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: center;
 }
 
-.hero-full-img {
-  width: 100%;
-  height: auto;
-  display: block;
+.hero-tagline-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--secondary);
+  margin-bottom: 0.75rem;
+}
+
+.hero-metrics {
+  display: flex;
+  gap: 4rem;
+  margin-top: 3.5rem;
+  border-top: 1px solid rgba(45, 74, 62, 0.08);
+  padding-top: 2rem;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.metric-lbl {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
 }
 
 .hero-left {
@@ -2208,6 +2249,18 @@ textarea.form-control {
     align-items: center;
   }
   
+  .hero-tagline-container {
+    justify-content: center;
+  }
+  
+  .hero-metrics {
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+  
   .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
@@ -2217,13 +2270,9 @@ textarea.form-control {
     justify-content: center;
   }
   
-  .hero-trust {
-    justify-content: center;
-  }
-  
   .hero-image-wrapper {
-    max-width: 400px;
-    aspect-ratio: 3/3.8;
+    max-width: 450px;
+    aspect-ratio: 1;
   }
   
   .hero-float-card {
@@ -2315,8 +2364,8 @@ textarea.form-control {
   }
   
   .hero {
-    padding-top: var(--nav-height);
-    padding-bottom: 0;
+    padding-top: calc(var(--nav-height) + 1.5rem);
+    padding-bottom: 3.5rem;
   }
   
   .hero-title {
@@ -2335,7 +2384,7 @@ textarea.form-control {
   
   .hero-image-wrapper {
     max-width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 1;
     border-radius: 16px;
     border-width: 1px;
     border-color: rgba(45, 74, 62, 0.08);

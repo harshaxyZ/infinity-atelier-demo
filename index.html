@@ -72,10 +72,47 @@
 
     <!-- 2. HERO SECTION -->
     <section class="hero" id="hero">
-        <picture class="hero-full-picture">
-            <source media="(max-width: 1024px)" srcset="assets/hero/hero_mobile.webp">
-            <img src="assets/hero/hero_desktop.webp" alt="Infinity Atelier Luxury Interior Design Studio Kolkata" class="hero-full-img" fetchpriority="high">
-        </picture>
+        <div class="container">
+            <div class="hero-left will-animate">
+                <div class="hero-tagline-container">
+                    <span class="hero-line"></span>
+                    <span class="section-label">INTERIOR DESIGN STUDIO</span>
+                </div>
+                <h1 class="hero-title" id="hero-main-title">
+                    Designing <br>
+                    <span class="italic-title">Spaces</span>
+                </h1>
+                <p class="hero-subtitle">Bespoke interiors for modern Indian living, blending traditional craftsmanship with contemporary minimalism.</p>
+                <div class="hero-actions">
+                    <a href="#library" class="btn btn-primary" id="hero-cta-explore">
+                        Explore Our Work
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <button class="btn btn-secondary book-consultation-trigger" id="hero-cta-consult">Book Consult</button>
+                </div>
+                
+                <!-- Bottom Metrics -->
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <div class="metric-num">150+</div>
+                        <div class="metric-lbl">Projects Completed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-num">100%</div>
+                        <div class="metric-lbl">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right will-animate delay-2">
+                <div class="hero-image-wrapper">
+                    <picture>
+                        <source media="(max-width: 1024px)" srcset="assets/hero/hero_mobile.webp">
+                        <img src="assets/hero/hero_desktop.webp" alt="Infinity Atelier Modern Luxury Living Room Lounge Design">
+                    </picture>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- 3. FEATURED IN LOGO BAR -->
@@ -521,13 +558,13 @@
 
             <!-- Before/After Slider Container -->
             <div class="slider-container will-animate">
-                <!-- After Image (Clean Japandi Bedroom Setup) -->
+                <!-- Before Image (Clipped, visible on the left) -->
                 <div class="slider-img slider-after">
-                    <img src="assets/projects/modern-living/project_14_1200.webp" alt="Yutori Finished Bedroom Interiors Minimalist">
+                    <img src="assets/projects/before_construction.webp" alt="Yutori Under Construction Room Shell">
                 </div>
                 
-                <!-- Before Image (Under Construction Raw Room) -->
-                <img class="slider-img slider-before" src="assets/projects/before_construction.webp" alt="Yutori Under Construction Room Shell">
+                <!-- After Image (Background, visible on the right) -->
+                <img class="slider-img slider-before" src="assets/projects/modern-living/project_14_1200.webp" alt="Yutori Finished Bedroom Interiors Minimalist">
                 
                 <div class="slider-handle">
                     <div class="slider-handle-button">
